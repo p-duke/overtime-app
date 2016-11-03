@@ -26,32 +26,40 @@ describe 'navigate' do
     end
   end
 
-    describe "creation" do
-      before do
+  describe 'new' do
+    it 'has a link from the homepage' do
+      visit root_path
 
-        visit new_post_path
-      end
+      click_link("new_post_from_nav")
+      expect(page.status_code).to eq(200)
+    end
+  end
 
-      it 'has a new form that can be reached' do
-        expect(page.status_code).to eq(200)
-      end
+  describe "creation" do
+    before do
+      visit new_post_path
+    end
 
-      it 'can be created from new form page' do
+    it 'has a new form that can be reached' do
+      expect(page.status_code).to eq(200)
+    end
 
-        fill_in 'post[date]', with: Date.today
-        fill_in 'post[rationale]', with: "Some rationale"
+    it 'can be created from new form page' do
 
-        click_on "Save"
+      fill_in 'post[date]', with: Date.today
+      fill_in 'post[rationale]', with: "Some rationale"
 
-        expect(page).to have_content("Some rationale")
-      end
-      it 'will have a user associated with it' do
-        fill_in 'post[date]', with: Date.today
-        fill_in 'post[rationale]', with: "User Association"
-        click_on "Save"
+      click_on "Save"
 
-        expect(User.last.posts.last.rationale).to eq("User Association")
-      end
+      expect(page).to have_content("Some rationale")
+    end
+    it 'will have a user associated with it' do
+      fill_in 'post[date]', with: Date.today
+      fill_in 'post[rationale]', with: "User Association"
+      click_on "Save"
+
+      expect(User.last.posts.last.rationale).to eq("User Association")
+    end
   end
 
   describe 'edit' do
