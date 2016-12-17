@@ -11,7 +11,7 @@
 # Features:
 - Approval Workflow
 - SMS sending -> link to approval or overtime input
-- Administrate admin dashboard
+- x Administrate admin dashboard
 - Email summary to managers for approval
 - Needs to be documented if employee did not log overtime
 
