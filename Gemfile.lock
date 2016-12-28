@@ -138,6 +138,7 @@ GEM
       slop (~> 3.4)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
+    puma (3.6.2)
     pundit (1.1.0)
       activesupport (>= 3.0.0)
     rack (1.6.4)
@@ -248,6 +249,7 @@ DEPENDENCIES
   jquery-rails
   pg (~> 0.15)
   pry-rails
+  puma (~> 3.4)
   pundit (~> 1.1)
   rails (= 4.2.6)
   rspec-rails (~> 3.0)
